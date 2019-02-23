@@ -21,6 +21,7 @@ function renderCanvases() {
   drawInCanvasEight();
 }
 
+// rectangle
 function drawInCanvasOne() {
   let ctx1 = canvasOne.getContext("2d");
 //   fillRect(x, y, width, height)  - draws a filled rectangle.
@@ -41,8 +42,22 @@ function drawInCanvasOne() {
   
 }
 
+
+// paths    1.create path - 2.draw - 3.stroke/render to fill
+// triangles
 function drawInCanvasTwo() {
   let ctx2 = canvasTwo.getContext("2d");
+  ctx2.beginPath();
+  ctx2.moveTo(75, 50);
+  ctx2.lineTo(200, 275);
+  ctx2.lineTo(100, 25);
+  ctx2.fill();
+
+  ctx2.beginPath();
+  ctx2.moveTo(120, 25);
+  ctx2.lineTo(200, 145);
+  ctx2.lineTo(300, 85);
+  ctx2.fill();
 }
 
 function drawInCanvasThree() {
