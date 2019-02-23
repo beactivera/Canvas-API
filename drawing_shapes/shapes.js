@@ -60,16 +60,61 @@ function drawInCanvasTwo() {
   ctx2.fill();
 }
 
+// arc
+// arc(x, y, radius, startAngle, endAngle, anticlockwise) -- Draws an arc which is centered at (x, y) position with radius r starting at startAngle and ending at endAngle going in the given direction indicated by anticlockwise (defaulting to clockwise).
+// The anticlockwise parameter is a Boolean value which, when true, draws the arc anticlockwise; otherwise, the arc is drawn clockwise.
+
+// arcTo(x1, y1, x2, y2, radius) - Draws an arc with the given control points and radius, connected to the previous point by a straight line.
+
+//converting degrees to radians : radians = (Math.PI/180)*degrees
 function drawInCanvasThree() {
   let ctx3 = canvasThree.getContext("2d");
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 3; j++) {
+      ctx3.beginPath();
+      let x = 25 + j * 50; // x coordinate
+      let y = 25 + i * 50; // y coordinate
+      let radius = 20; // Arc radius
+      let startAngle = 0; // Starting point on circle
+      let endAngle = Math.PI + (Math.PI * j) / 2; // End point on circle
+      let anticlockwise = i % 2 !== 0; // clockwise or anticlockwise
+
+      ctx3.arc(x, y, radius, startAngle, endAngle, anticlockwise);
+
+      if (i > 1) {
+        ctx3.fill();
+      } else {
+        ctx3.stroke();
+      }
+    }
+  }
 }
 
+// fillStyle
 function drawInCanvasFour() {
   let ctx4 = canvasFour.getContext("2d");
+  for (let i=0; i<6; i++){
+      for(let j=0; j<6; j++){
+        ctx4.fillStyle = 'rgb(' + Math.floor(255 - 42.5 * i) + ', ' + Math.floor(255 - 42.5 * j) + ', 0)';
+        ctx4.fillRect(10 + j * 25, 10+ i * 25, 50, 50);
+            }
+          }
+
 }
 
+
+// strokeStyle
 function drawInCanvasFive() {
   let ctx5 = canvasFive.getContext("2d");
+  for (let i = 0; i < 10; i++) {
+    for (let j = 0; j < 10; j++) {
+      ctx5.strokeStyle = 'rgb(0, ' + Math.floor(255 - 42.5 * i) + ', ' + 
+                       Math.floor(255 - 42.5 * j) + ')';
+      ctx5.beginPath();
+      ctx5.arc(20 + j * 25, 20 + i * 25, 10, 0, Math.PI * 2, true);
+      ctx5.stroke();
+    }
+  }
 }
 
 function drawInCanvasSix() {
