@@ -23,6 +23,22 @@ function renderCanvases() {
 
 function drawInCanvasOne() {
   let ctx1 = canvasOne.getContext("2d");
+//   fillRect(x, y, width, height)  - draws a filled rectangle.
+//   strokeRect(x, y, width, height) - draws a rectangular outline.
+//   clearRect(x, y, width, height) - clears the specified rectangular area, making it fully transparent.
+  ctx1.fillRect(25, 25, 100, 100);
+  ctx1.fillRect(150, 150, 100, 100);
+  ctx1.fillRect(300, 25, 100, 100);
+  ctx1.clearRect(50, 50, 50, 50);
+  ctx1.clearRect(160, 160, 25, 25);
+  ctx1.clearRect(180, 190, 20, 80);
+  ctx1.clearRect(200, 160, 25, 25);
+  ctx1.clearRect(310, 50, 50, 50);
+  ctx1.strokeRect(30,150,50,50);
+  ctx1.strokeRect(150,30,50,50);
+  ctx1.strokeRect(300,220,50,50);
+
+  
 }
 
 function drawInCanvasTwo() {
